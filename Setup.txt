@@ -1,0 +1,73 @@
+FGO CHATBOT - QUICK SETUP
+
+You need:
+  - Python 3.12 or newer   (python.org)
+  - Node.js (LTS version)  (nodejs.org)
+  - An internet connection the first time you run it
+
+The project has two parts that run at the same time: a Python server (the chatbot)
+and a web page (the chat + 3D avatar). Use two terminal windows.
+
+
+1) START THE CHATBOT SERVER  (terminal 1)
+
+  cd chatbot_backend
+  python -m venv ..\.venv
+  ..\.venv\Scripts\Activate.ps1
+  pip install -r requirements.txt
+  python app.py
+
+Wait until it says "Running on http://127.0.0.1:5000" and leave it open.
+The first start downloads the servant list and some language data, so it takes a moment.
+
+
+2) START THE CHAT PAGE  (terminal 2)
+
+  cd chatbot_frontend\chatbot_frontend
+  npm install
+  npm run dev
+
+Then open  http://localhost:5173  in your browser.
+
+
+3) TRY IT
+
+  hello
+  what is fgo about
+  how do the gacha rates work
+  tell me about gilgamesh
+  saber
+  what are the servant classes
+  what's the weather        (it should politely say it can't help)
+
+
+OPTIONAL: THE 3D AVATAR
+
+The avatar model is not included (it has its own license). To show it, put a VRM file at
+  chatbot_frontend\chatbot_frontend\public\models\avatar.vrm
+and reload the page. Without it the chat works normally.
+
+
+OPTIONAL: RETRAIN, TEST, MEASURE  (in chatbot_backend, with the server running for the last two)
+
+  python train_model.py          retrains the model, writes model_results.txt
+  python test_responses.py       42-question check, writes test_results.txt
+  python measure_performance.py  reply times, writes performance_results.txt
+
+
+IF SOMETHING GOES WRONG
+
+  "Failed to load page" / ERR_CONNECTION_REFUSED
+      The chat page is not running. Start step 2.
+  "Error connecting to the chatbot server" in the chat
+      The server is not running. Start step 1.
+  "ModuleNotFoundError" when starting the server
+      The virtual environment is not active, or step 1 was skipped.
+      Run the activate line again, then  pip install -r requirements.txt
+  "running scripts is disabled" in PowerShell
+      Run this once, then try again:
+      Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
+  The server fails on the first start with a network error
+      It needs internet once to download the servant list. Connect and try again.
+
+More detail: see README.md
