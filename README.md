@@ -21,8 +21,6 @@ user message -> preprocessing -> TF-IDF -> Logistic Regression (intent + confide
                           JSON { reply, intent, confidence, kind } -> chat page + 3D avatar
 ```
 
-![Pipeline diagram](docs/fgo_nlp_pipeline_diagram.png)
-
 Folder layout
 
 ```
