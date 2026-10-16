@@ -1,0 +1,115 @@
+# Error Analysis
+
+## Summary
+
+The intent classifier (TF-IDF features + Logistic Regression) was trained on 310 hand-written
+questions across 8 intents and tested on a held-out 20% (62 questions).
+
+| Measure | Result |
+|---|---|
+| Accuracy on the held-out test split | 0.65 (40 of 62 correct) |
+| Macro F1 | 0.66 |
+| 5-fold cross-validation, repeated 3 times | accuracy 0.663 +/- 0.058, macro F1 0.666 +/- 0.057 (folds ranged 0.58 to 0.79) |
+| End-to-end test of the full chatbot (42 questions) | 37/42 (88%); 31/35 (88%) on questions not in the training data |
+
+The full chatbot scores higher than the classifier alone because the classifier is backed by a
+servant-name recognition step and a few routing rules (explained below).
+
+## Per-intent results (test split)
+
+| Intent | Precision | Recall | F1 | Test questions |
+|---|---|---|---|---|
+| greeting | 1.00 | 1.00 | 1.00 | 7 |
+| event_info | 1.00 | 0.86 | 0.92 | 7 |
+| gacha_info | 1.00 | 0.86 | 0.92 | 7 |
+| fallback (off-topic) | 0.46 | 0.67 | 0.55 | 9 |
+| gameplay_help | 0.50 | 0.57 | 0.53 | 7 |
+| player_review | 0.43 | 0.67 | 0.52 | 9 |
+| game_info | 0.75 | 0.33 | 0.46 | 9 |
+| servant_info | 0.50 | 0.29 | 0.36 | 7 |
+
+Intents with distinctive vocabulary (greetings, events, gacha) work well. The weak ones overlap
+with each other. The confusion matrix is in `chatbot_backend/confusion_matrix.png`.
+
+## Where the classifier goes wrong (22 errors out of 62)
+
+1. **game_info mistaken for player_review (5 of the 9 game_info questions).**
+   Examples: "what company developed fgo", "what platform is fgo on", "what languages is fgo
+   available in". These are factual questions, but they contain the same words ("fgo", "game") as
+   opinion questions such as "is fgo worth playing". With about 40 examples per intent, the model
+   cannot reliably tell the two apart.
+2. **servant_info mistaken for fallback (3 of 7).**
+   Examples: "who is scathach", "who is altria", "who is merlin". A name question gives the model
+   very little to work with: the name is a word it has rarely seen, so its confidence is only 0.18,
+   below the 0.20 cutoff. *In the full chatbot these questions are answered correctly anyway*,
+   because the servant-name recognition step finds the name regardless of the classifier's confidence.
+3. **Short or vague questions get low confidence.**
+   Examples: "what is command seal" (0.18), "do people still play this" (0.18), "when is the next
+   anniversary" (0.17). Few words means little for TF-IDF to use.
+4. **Off-topic questions that share words with the domain.**
+   "have you played other gacha games" was read as player_review (shares "gacha", "games"), and
+   "tell me a joke" as servant_info (the word "tell" appears in many servant questions, such as
+   "tell me about gilgamesh").
+
+The pattern: most errors happen between intents that share vocabulary, or on short questions
+where the model has little evidence.
+
+## What was tried to improve it
+
+| Change | Accuracy / macro F1 | Result |
+|---|---|---|
+| Baseline, 170 questions | 0.59 / 0.61 | starting point |
+| Add word pairs (bigrams) | 0.59 / 0.61 | no change: too little data for two-word phrases to repeat |
+| Add 13 questions to one intent only (183 rows) | 0.46 / 0.44 | worse: the model leaned toward the intent with more data (class imbalance) |
+| Same, with `class_weight='balanced'` | 0.51 / 0.51 | partly corrected, still below baseline |
+| Expand to 294 balanced questions | 0.61 / 0.62 | small gain from more data |
+| Add 8 targeted game_info questions (302) | 0.67 / 0.67 | game_info recall 0.29 to 0.89, but player_review dropped (F1 0.67 to 0.44) |
+| Add 8 targeted player_review questions (310) | 0.65 / 0.66 | player_review recovered, but game_info dropped again |
+
+Fixing one of the two overlapping intents costs the other. This is a limit of the data size
+(about 40 questions per intent), not something more tuning would fix, so the final model is
+the 310-question version.
+
+## How the full chatbot makes up for the classifier's weaknesses
+
+- **Confidence cutoff (0.20).** Below it the bot says it did not understand instead of guessing.
+  Lowering it from 0.25 to 0.20 gave 7 more correct answers for 3 more wrong ones on the test data.
+- **Servant-name recognition.** Finds a servant's name in the message (handling accents, hyphens,
+  last names, nicknames and small typos), so name questions work even when the classifier is unsure.
+- **Class questions.** "saber" or "what are the servant classes" get a real answer with the class
+  matchups and servant counts taken from the game data.
+- **Two kinds of fallback.** An off-topic question gets a polite "not my topic"; an unclear one
+  gets "could you rephrase?".
+
+The 5 questions the full chatbot still gets wrong: "heya" (a word it never saw), "give me a quick
+overview of this game", "is there any guaranteed pull" (confidence 0.19, just under the cutoff),
+"is anything happening in the game right now", and "tell me a joke".
+
+## Other errors found and fixed (not classifier errors)
+
+Testing the replies, not just the classifier, found mistakes in the written answers:
+- A reply said three cards of one type make a "Brave Chain". Wrong: that needs three cards from
+  the same servant. Fixed.
+- Replies said the game has "no pity system". Wrong for the English server, which guarantees the
+  featured servant by the 330th summon on limited banners (checked against official pages). Fixed.
+- A servant's "notable traits" always listed a trait nearly every servant has. Removed.
+- The first message after starting the server took 1.2 seconds because a language dictionary loaded
+  lazily. A startup warm-up brought it down to 22 ms.
+
+Accuracy numbers do not catch this kind of error, so the replies were checked separately.
+
+## Limitations
+
+- The 310 questions were written by one person, not collected from real users. Real users may
+  phrase things differently, so real-world accuracy could be lower than reported.
+- The test set is small (62 questions), so one question changes accuracy by 1.6 points.
+  Cross-validation (0.58 to 0.79 across folds) shows how much the result can vary.
+- Craft essences and materials are not covered. Questions about them get an unrelated reply.
+- Answers about the gacha and events are general, because the game changes often.
+
+## How it could be improved
+
+- Collect real questions from users and add many more examples per intent, especially for
+  game_info versus player_review and for servant names.
+- Try sentence embeddings (semantic similarity), which compare meaning instead of shared words and
+  should separate the overlapping intents better.
