@@ -1,0 +1,179 @@
+[CHECK] 'heya'
+        expected: greeting       got: reject         (intent=fallback, conf=0.18)
+        reply: Ehehe, that one went over my head! Try asking again?
+
+[PASS] 'hello hello'
+        expected: greeting       got: greeting       (intent=greeting, conf=0.47)
+        reply: Hiya! I'm all ears for your FGO questions, big or small.
+
+[PASS] 'good morning chatbot'
+        expected: greeting       got: greeting       (intent=greeting, conf=0.36)
+        reply: Fufu, welcome back~ What shall we talk about?
+
+[PASS] 'hi, quick question'
+        expected: greeting       got: greeting       (intent=greeting, conf=0.33)
+        reply: Ehehe, hello Master~ Ask me anything about FGO — servants, gacha, events, you name it!
+
+[PASS] "what's fgo all about"
+        expected: game_info      got: game_info      (intent=game_info, conf=0.57)
+        reply: FGO — Fate/Grand Order — is a turn-based RPG where you, a Master, command Servants: heroic spirits pulled from myth and history. The story follows Chaldea's fight to save humanity's future across different eras!
+
+[CHECK] 'give me a quick overview of this game'
+        expected: game_info      got: reject         (intent=fallback, conf=0.19)
+        reply: Sorry, I didn't quite catch that — mind rephrasing?
+
+[PASS] 'who developed fate grand order'
+        expected: game_info      got: game_info      (intent=game_info, conf=0.46)
+        reply: Think turn-based battles plus a long, heavy story — FGO leans more story-and-character focused than most mobile games, with chapters that can run for hours.
+
+[PASS] 'can i play fgo on my computer'
+        expected: game_info      got: game_info      (intent=game_info, conf=0.42)
+        reply: It's a gacha RPG at heart, built on the Fate franchise. You'll recruit Servants, fight through story chapters called Singularities, and slowly uncover why history itself is falling apart.
+
+[PASS] 'what are my odds of pulling a 5 star'
+        expected: gacha_info     got: gacha_info     (intent=gacha_info, conf=0.21)
+        reply: Ehehe, gacha can be cruel~ 5-stars are roughly 1% per pull. But limited-time pickup banners have a 330-summon guarantee, which comes to about 900 Saint Quartz, so saving up for a Servant you really want is a solid plan.
+
+[PASS] 'how do banners work'
+        expected: gacha_info     got: gacha_info     (intent=gacha_info, conf=0.47)
+        reply: Each 11-summon costs 30 Saint Quartz and always includes a 4-star or better card. Just remember the 330-summon guarantee only covers limited-time pickup banners, not the permanent Story banner.
+
+[PASS] 'how much do i need to spend to summon'
+        expected: gacha_info     got: gacha_info     (intent=gacha_info, conf=0.26)
+        reply: Each 11-summon costs 30 Saint Quartz and always includes a 4-star or better card. Just remember the 330-summon guarantee only covers limited-time pickup banners, not the permanent Story banner.
+
+[CHECK] 'is there any guaranteed pull'
+        expected: gacha_info     got: reject         (intent=gacha_info, conf=0.19)
+        reply: Sorry, I didn't quite catch that — mind rephrasing?
+
+[PASS] 'how can i defeat a tough boss'
+        expected: gameplay_help  got: gameplay_help  (intent=gameplay_help, conf=0.31)
+        reply: Combat's turn-based: each turn you pick 3 cards from your Servants' hands (Buster, Arts, or Quick), chain matching types for bonuses, and build your NP gauge for a big Noble Phantasm attack!
+
+[PASS] 'explain card chains'
+        expected: gameplay_help  got: gameplay_help  (intent=gameplay_help, conf=0.24)
+        reply: Mix Buster for damage, Arts for NP gauge, and Quick for critical stars. Pick three cards of the same color for a color chain bonus, or three cards from the same Servant for a Brave Chain and an extra attack!
+
+[PASS] 'how do i fill my np gauge'
+        expected: gameplay_help  got: gameplay_help  (intent=gameplay_help, conf=0.4)
+        reply: Match class advantages (Saber beats Lancer, Lancer beats Archer, and so on) for extra damage, chain same-type cards for combo bonuses, and watch your NP gauge — hit 100% to unleash a Noble Phantasm.
+
+[PASS] 'which classes are strong against others'
+        expected: servant_info   got: servant_info   (intent=servant_info, conf=0.44)
+        reply: Ehehe, servants fight under classes! The seven standard ones are Saber, Archer, Lancer, Rider, Caster, Assassin and Berserker, plus special 'extra' classes like Ruler, Avenger, Moon Cancer, Alter Ego, Foreigner, Pretender, Shielder and Beast. Saber beats Lancer, Lancer beats Archer and Archer beats Saber; Rider beats Caster, Caster beats Assassin and Assassin beats Rider; Berserkers hit everything hard but take double damage. Ask me about one class, like Saber, and I'll tell you more~
+
+[CHECK] 'is anything happening in the game right now'
+        expected: event_info     got: reject         (intent=fallback, conf=0.29)
+        reply: Mm, I'm not well versed in that topic — ask me something about FGO instead and I'll do my best!
+
+[PASS] 'when is the next event'
+        expected: event_info     got: event_info     (intent=event_info, conf=0.61)
+        reply: Ehehe, there's almost always something going on — check in-game for the current banner and event schedule, since FGO rotates content pretty frequently.
+
+[PASS] 'what do events give you'
+        expected: event_info     got: event_info     (intent=event_info, conf=0.75)
+        reply: Ehehe, there's almost always something going on — check in-game for the current banner and event schedule, since FGO rotates content pretty frequently.
+
+[PASS] 'is it worth starting fgo today'
+        expected: player_review  got: player_review  (intent=player_review, conf=0.4)
+        reply: Long-time fans tend to agree the story carries the game — just go in knowing the gacha isn't generous, and pacing yourself matters more than spending.
+
+[PASS] 'can you enjoy fgo without paying'
+        expected: player_review  got: player_review  (intent=player_review, conf=0.5)
+        reply: Long-time fans tend to agree the story carries the game — just go in knowing the gacha isn't generous, and pacing yourself matters more than spending.
+
+[PASS] 'is fgo too grindy'
+        expected: player_review  got: player_review  (intent=player_review, conf=0.45)
+        reply: FGO's story is widely loved — some call it one of the best in mobile gaming — but the gacha is notoriously stingy and the combat can get grindy. Still very playable F2P if you're patient!
+
+[PASS] 'would you recommend this game to a beginner'
+        expected: player_review  got: player_review  (intent=player_review, conf=0.3)
+        reply: FGO's story is widely loved — some call it one of the best in mobile gaming — but the gacha is notoriously stingy and the combat can get grindy. Still very playable F2P if you're patient!
+
+[PASS] 'who is gilgamesh'
+        expected: servant_info   got: servant_info   (intent=servant_info, conf=0.18)
+        reply: Fufu, Gilgamesh huh? I like your taste! A 5-star hero, fighting as a sharp-eyed Archer. By alignment they're Chaotic Good, with the Sky attribute. Traits worth knowing: King, Divine, Humanoid. Max-level stats: 12,280 ATK and 13,097 HP. Heads up, they have another version too: Caster (4-star). Want to know about another servant? Just ask~
+
+[PASS] 'tell me about scathach'
+        expected: servant_info   got: servant_info   (intent=servant_info, conf=0.46)
+        reply: Mm, Scáthach... a fine pick, Master. A 5-star hero, fighting as a swift Lancer. By alignment they're Neutral Good, with the Star attribute. Notable traits: King, Humanoid. Max-level stats: 11,375 ATK and 14,825 HP. There's always more to learn about our fellow heroic spirits!
+
+[PASS] 'tamamo'
+        expected: servant_info   got: servant_info   (intent=servant_info, conf=0.19)
+        reply: Ehehe, you're curious about Tamamo-no-Mae? Let me tell you~ Rarity 5 stars, and they're a spellcasting Caster. By alignment they're Neutral Evil, with the Sky attribute. Traits worth knowing: Divine, Humanoid. Max-level stats: 10,546 ATK and 14,259 HP. There are other servants who share that name too, like Tamamo Cat, Tamamo-no-Mae (Lancer) - ask for them by full name if you meant someone else! Chaldea's full of interesting company, isn't it?
+
+[PASS] 'tell me about cu chulainn'
+        expected: servant_info   got: servant_info   (intent=servant_info, conf=0.39)
+        reply: Ehehe, you're curious about Cú Chulainn? Let me tell you~ Rarity 3 stars, and they're a swift Lancer. By alignment they're Lawful Balanced, with the Sky attribute. Notable traits: Divine, Humanoid, Brynhild's Beloved. Max-level stats: 7,239 ATK and 9,593 HP. Heads up, they have another version too: Caster (3-star). Want to know about another servant? Just ask~
+
+[PASS] 'cu chulain'
+        expected: servant_info   got: servant_info   (intent=servant_info, conf=0.19)
+        reply: Mm, Cú Chulainn... a fine pick, Master. Rarity 3 stars, and they're a swift Lancer. Lawful Balanced in alignment, and Sky attribute. Notable traits: Divine, Humanoid, Brynhild's Beloved. Max-level stats: 7,239 ATK and 9,593 HP. Heads up, they have another version too: Caster (3-star). Chaldea's full of interesting company, isn't it?
+
+[PASS] 'who is nero'
+        expected: servant_info   got: servant_info   (intent=servant_info, conf=0.17)
+        reply: Mm, Nero Claudius... a fine pick, Master. A 4-star hero, fighting as a blade-wielding Saber. Chaotic Good in alignment, and Man attribute. Traits worth knowing: King, Riding, Humanoid. Max-level stats: 9,449 ATK and 11,753 HP. There are other servants who share that name too, like Nero Claudius (Bride), Nero Claudius (Caster) - ask for them by full name if you meant someone else! Chaldea's full of interesting company, isn't it?
+
+[PASS] 'tell me about a servant'  (in training data)
+        expected: servant_info   got: servant_info   (intent=servant_info, conf=0.68)
+        reply: Oh-ho, William Tell! Good choice. Here's the scoop: Rarity 3 stars, and they're a sharp-eyed Archer. By alignment they're Lawful Good, with the Man attribute. Notable traits: Humanoid, Brynhild's Beloved. At max level they reach 7,384 ATK and 9,310 HP. There's always more to learn about our fellow heroic spirits!
+
+[PASS] 'saber'
+        expected: servant_info   got: servant_info   (intent=servant_info, conf=0.25)
+        reply: Oh-ho, Saber! Good choice. Here's the scoop: Saber is one of the three knight classes, built around the sword. Sabers deal double damage to Lancers, but take double damage from Archers. There are 53 Saber-class servants in my records, like Altria Pendragon, Altria Pendragon (Alter), Altria Pendragon (Lily). Ask me about any of them by name!
+
+[PASS] 'what are the servant classes'
+        expected: servant_info   got: servant_info   (intent=servant_info, conf=0.65)
+        reply: Ehehe, servants fight under classes! The seven standard ones are Saber, Archer, Lancer, Rider, Caster, Assassin and Berserker, plus special 'extra' classes like Ruler, Avenger, Moon Cancer, Alter Ego, Foreigner, Pretender, Shielder and Beast. Saber beats Lancer, Lancer beats Archer and Archer beats Saber; Rider beats Caster, Caster beats Assassin and Assassin beats Rider; Berserkers hit everything hard but take double damage. Ask me about one class, like Saber, and I'll tell you more~
+
+[PASS] "what's the weather today"  (in training data)
+        expected: reject         got: reject         (intent=fallback, conf=0.2)
+        reply: Ehehe, that one went over my head! Try asking again?
+
+[CHECK] 'tell me a joke'  (in training data)
+        expected: reject         got: servant_info   (intent=servant_info, conf=0.46)
+        reply: Mm, William Tell... a fine pick, Master. They fight as a sharp-eyed Archer, rarity 3 stars. Lawful Good in alignment, and Man attribute. Traits worth knowing: Humanoid, Brynhild's Beloved. At max level they reach 7,384 ATK and 9,310 HP. Want to know about another servant? Just ask~
+
+[PASS] 'what is the capital of france'
+        expected: reject         got: reject         (intent=fallback, conf=0.31)
+        reply: Ehehe, that's a bit outside my wheelhouse~ I mainly know about FGO's story, servants, gacha, gameplay, and events!
+
+[PASS] 'recommend me a movie'
+        expected: reject         got: reject         (intent=fallback, conf=0.35)
+        reply: Ehehe, that's a bit outside my wheelhouse~ I mainly know about FGO's story, servants, gacha, gameplay, and events!
+
+[PASS] 'asdfgh'
+        expected: reject         got: reject         (intent=fallback, conf=0.18)
+        reply: Hmm, not sure I followed — could you say that a different way?
+
+[PASS] 'idk'  (in training data)
+        expected: reject         got: reject         (intent=fallback, conf=0.33)
+        reply: Mm, I'm not well versed in that topic — ask me something about FGO instead and I'll do my best!
+
+[PASS] 'is fgo more generous than other gachas'  (in training data)
+        expected: player_review  got: player_review  (intent=player_review, conf=0.4)
+        reply: It's a mixed bag: incredible writing, so-so combat depth, and a gacha that tests your patience. F2P is doable, just don't expect to get every Servant you want right away.
+
+[PASS] 'WHAT ARE THE GACHA RATES???'  (in training data)
+        expected: gacha_info     got: gacha_info     (intent=gacha_info, conf=0.34)
+        reply: Ehehe, gacha can be cruel~ 5-stars are roughly 1% per pull. But limited-time pickup banners have a 330-summon guarantee, which comes to about 900 Saint Quartz, so saving up for a Servant you really want is a solid plan.
+
+[PASS] 'hello 😊'  (in training data)
+        expected: greeting       got: greeting       (intent=greeting, conf=0.47)
+        reply: Ehehe, hello Master~ Ask me anything about FGO — servants, gacha, events, you name it!
+
+[PASS] '   '
+        expected: error          got: error          (intent=-, conf=0.0)
+        reply: Empty message
+
+======================================================================
+37/42 replies were the expected kind (88%)
+31/35 on questions NOT in the training data (88%) - the fairer number
+
+Items to review (a miss is not automatically a bug - the classifier is
+~65% accurate on a small dataset, so some misroutes are expected):
+  - 'heya': expected greeting, got reject
+  - 'give me a quick overview of this game': expected game_info, got reject
+  - 'is there any guaranteed pull': expected gacha_info, got reject
+  - 'is anything happening in the game right now': expected event_info, got reject
+  - 'tell me a joke': expected reject, got servant_info

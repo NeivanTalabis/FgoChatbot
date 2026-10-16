@@ -1,0 +1,41 @@
+Dataset: 310 rows; train 248 / test 62 (stratified 80/20, random_state=42)
+intent
+fallback         45
+player_review    44
+game_info        43
+gameplay_help    37
+event_info       36
+greeting         35
+gacha_info       35
+servant_info     35
+
+Classification report (held-out test split):
+               precision    recall  f1-score   support
+
+   event_info       1.00      0.86      0.92         7
+     fallback       0.46      0.67      0.55         9
+   gacha_info       1.00      0.86      0.92         7
+    game_info       0.75      0.33      0.46         9
+gameplay_help       0.50      0.57      0.53         7
+     greeting       1.00      1.00      1.00         7
+player_review       0.43      0.67      0.52         9
+ servant_info       0.50      0.29      0.36         7
+
+     accuracy                           0.65        62
+    macro avg       0.71      0.65      0.66        62
+ weighted avg       0.69      0.65      0.64        62
+
+Confusion matrix (rows = true intent, columns = predicted):
+               event_info  fallback  gacha_info  game_info  gameplay_help  greeting  player_review  servant_info
+event_info              6         1           0          0              0         0              0             0
+fallback                0         6           0          0              0         0              2             1
+gacha_info              0         0           6          0              0         0              1             0
+game_info               0         1           0          3              0         0              5             0
+gameplay_help           0         2           0          0              4         0              0             1
+greeting                0         0           0          0              0         7              0             0
+player_review           0         0           0          1              2         0              6             0
+servant_info            0         3           0          0              2         0              0             2
+
+5-fold cross-validation, repeated 3 times (15 folds):
+  accuracy 0.663 +/- 0.058  (range 0.581-0.790)
+  macro F1 0.666 +/- 0.057  (range 0.595-0.780)

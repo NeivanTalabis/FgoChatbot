@@ -1,0 +1,311 @@
+text,intent
+hey,greeting
+hi there,greeting
+hello,greeting
+good morning,greeting
+yo,greeting
+what's up,greeting
+hey chatbot,greeting
+is anyone there,greeting
+good evening,greeting
+hiya,greeting
+hey master,greeting
+greetings,greeting
+sup,greeting
+hello there,greeting
+hey can you help me,greeting
+hi i need some help,greeting
+morning,greeting
+evening,greeting
+hey you around,greeting
+hello chatbot,greeting
+good afternoon,greeting
+hey bot,greeting
+hows it going,greeting
+yo whats good,greeting
+hello again,greeting
+hey i have a question,greeting
+hi can we chat,greeting
+good day,greeting
+hey there friend,greeting
+howdy,greeting
+hi im back,greeting
+hello world,greeting
+hey i just started playing,greeting
+hi im new here,greeting
+hello can you assist me,greeting
+what is fgo,game_info
+what is fate grand order about,game_info
+tell me about this game,game_info
+what genre is fgo,game_info
+who made fate grand order,game_info
+what's the story of fgo,game_info
+is fgo a gacha game,game_info
+what kind of game is this,game_info
+what platform is fgo on,game_info
+can i play fgo on pc,game_info
+is fgo mobile only,game_info
+what company developed fgo,game_info
+when did fgo release,game_info
+what's the premise of the game,game_info
+is fgo turn based,game_info
+what type of rpg is this,game_info
+tell me the basic story,game_info
+what's the setting of fgo,game_info
+who is the protagonist of fgo,game_info
+is this game story heavy,game_info
+what's a singularity in fgo,game_info
+what's chaldea,game_info
+who are masters in fgo,game_info
+is fgo based on an anime,game_info
+what's the fate franchise,game_info
+how many chapters does fgo have,game_info
+is fgo free to download,game_info
+what languages is fgo available in,game_info
+explain the world of fgo,game_info
+what's a servant in simple terms,game_info
+is fgo a visual novel or rpg,game_info
+who is mash kyrielight,game_info
+what's the main story called,game_info
+how long is the main story,game_info
+is fgo connected to other fate anime,game_info
+what's the lore behind fgo,game_info
+is there a canon order to play fate titles,game_info
+what age rating does fgo have,game_info
+is fgo a sequel or a spin off,game_info
+what's the overarching plot of fgo,game_info
+how is fgo different from other fate games,game_info
+what's the timeline of the fate series,game_info
+does fgo have multiple story routes,game_info
+what are the gacha rates,gacha_info
+how does summoning work,gacha_info
+what's the drop rate for 5 stars,gacha_info
+how do i get a servant,gacha_info
+what's a banner,gacha_info
+how much does a summon cost,gacha_info
+what is a saint quartz,gacha_info
+how many quartz for a summon,gacha_info
+is there a pity system,gacha_info
+what's the rate up chance,gacha_info
+how rare are ssr servants,gacha_info
+what's a spark,gacha_info
+how do limited banners work,gacha_info
+can i reroll in fgo,gacha_info
+what's the best way to save quartz,gacha_info
+how often are new banners,gacha_info
+what's the percentage for 5 star servants,gacha_info
+how do i summon a specific servant,gacha_info
+is gssr a thing in fgo,gacha_info
+what's guaranteed ssr,gacha_info
+what's a friend point summon,gacha_info
+how do exchange tickets work,gacha_info
+whats the difference between story summon and normal summon,gacha_info
+how much is a multi summon,gacha_info
+do rates increase during rate up banners,gacha_info
+whats the point of a spark,gacha_info
+can i get duplicate servants,gacha_info
+what happens if i pull a duplicate,gacha_info
+how do ascension materials relate to gacha,gacha_info
+is it better to save or pull early,gacha_info
+what's a welfare servant,gacha_info
+how do i know if a banner is worth pulling,gacha_info
+do older banners rerun,gacha_info
+what's the quartz cost for a 10 pull,gacha_info
+is there a subscription for quartz,gacha_info
+tell me about a servant,servant_info
+who is altria,servant_info
+tell me about gilgamesh,servant_info
+what servants are good,servant_info
+who is the strongest servant,servant_info
+tell me about saber,servant_info
+what class is emiya,servant_info
+who is jeanne d'arc,servant_info
+what are servant classes,servant_info
+tell me about a character,servant_info
+who is cu chulainn,servant_info
+what is a noble phantasm,servant_info
+tell me about berserker class,servant_info
+who is a good starter servant,servant_info
+what servants should i pull for,servant_info
+tell me about assassin class servants,servant_info
+who is the best support servant,servant_info
+what's a craft essence,servant_info
+tell me about archer class,servant_info
+who are the knights of the round table,servant_info
+who is tamamo no mae,servant_info
+tell me about nero claudius,servant_info
+who is elisabeth bathory,servant_info
+what class is medusa,servant_info
+tell me about herakles,servant_info
+who is scathach,servant_info
+what's the difference between saber and lancer,servant_info
+who is a good healer servant,servant_info
+tell me about rider class servants,servant_info
+who is merlin,servant_info
+what does a caster do,servant_info
+who is a good aoe damage servant,servant_info
+tell me about single target servants,servant_info
+what makes a servant good for farming,servant_info
+who is a good np looper,servant_info
+how do i play this game,gameplay_help
+what are the controls,gameplay_help
+how does combat work,gameplay_help
+what is a noble phantasm attack,gameplay_help
+how do chains work,gameplay_help
+what's an np gauge,gameplay_help
+how do i level up servants,gameplay_help
+what is ascension,gameplay_help
+how do skills work,gameplay_help
+what's a brave chain,gameplay_help
+how do i beat a boss,gameplay_help
+how do i strengthen my servant,gameplay_help
+what is command seal,gameplay_help
+how do i clear a quest,gameplay_help
+what's the battle system like,gameplay_help
+how do class advantages work,gameplay_help
+what does critical star do,gameplay_help
+how do i farm materials,gameplay_help
+what's an extra attack,gameplay_help
+how do i use skill enhancement,gameplay_help
+how do i pick which servants to bring,gameplay_help
+what's the best team formation,gameplay_help
+how do i deal more damage,gameplay_help
+what does the arts buster quick order do,gameplay_help
+how do i survive tough battles,gameplay_help
+what's overkill damage,gameplay_help
+how do i unlock interludes,gameplay_help
+what does refund mean in battle,gameplay_help
+how do i use a support servant,gameplay_help
+how do i raise my servant's bond level,gameplay_help
+what's the difference between attack and defense servants,gameplay_help
+how do i clear a hard quest,gameplay_help
+what's a good strategy for boss fights,gameplay_help
+what does np level mean,gameplay_help
+how do i increase my np gauge faster,gameplay_help
+whats the point of critical stars,gameplay_help
+how do i unlock a servants final ascension,gameplay_help
+what's the current event,event_info
+is there an event right now,event_info
+when does the next event start,event_info
+what events are coming up,event_info
+how do event quests work,event_info
+what's a limited time event,event_info
+are there event exclusive servants,event_info
+what's a rerun event,event_info
+how long does this event last,event_info
+what rewards does this event give,event_info
+is there a login bonus event,event_info
+what's the anniversary event,event_info
+how do i get event currency,event_info
+what's a story event,event_info
+are there any events this month,event_info
+what's a collab event,event_info
+how do challenge quests work in events,event_info
+is the current event farmable,event_info
+what event servant is featured,event_info
+does this event give free summons,event_info
+when is the next anniversary,event_info
+what's a servant coin shop event,event_info
+how do i complete event missions,event_info
+is there maintenance today,event_info
+what happens during maintenance,event_info
+are there seasonal events like christmas or halloween,event_info
+how do daily login bonuses work,event_info
+what's included in the event shop,event_info
+is there a valentines event,event_info
+what's a mini event,event_info
+do events give free servants,event_info
+how do i track event progress,event_info
+what's a coin shop in an event,event_info
+are old events playable later,event_info
+whats a summer event usually about,event_info
+how many event points do i need for the shop,event_info
+is fgo worth playing,player_review
+should i start fgo,player_review
+is this game pay to win,player_review
+can i play f2p,player_review
+is fgo good for beginners,player_review
+is fgo still active,player_review
+worth downloading in 2026,player_review
+is the story good,player_review
+how grindy is fgo,player_review
+is fgo dying,player_review
+do people still play this,player_review
+is fgo fun,player_review
+should i spend money on this game,player_review
+is f2p viable in fgo,player_review
+how's the community for fgo,player_review
+is fgo better than other gacha games,player_review
+what do people think of fgo,player_review
+is fgo worth the time investment,player_review
+does fgo have a lot of content,player_review
+would you recommend fgo,player_review
+is fgo beginner friendly,player_review
+how does fgo compare to genshin,player_review
+is the gacha in fgo fair,player_review
+is fgo too old to get into now,player_review
+whats the biggest complaint about fgo,player_review
+is fgo more story or gameplay focused,player_review
+how much money do people spend on fgo,player_review
+is it too late to start fgo in 2026,player_review
+is the game pay to progress or pay to win,player_review
+does fgo respect your time,player_review
+is the writing in fgo actually good,player_review
+how does fgo treat f2p players,player_review
+is fgo more generous than other gachas,player_review
+whats the general opinion on fgo's gacha rates,player_review
+is fgo a good gateway into the fate series,player_review
+how steep is the learning curve,player_review
+do you regret starting fgo,player_review
+i'm disappointed in how fgo handles gacha,player_review
+im glad i started playing fgo,player_review
+what's your honest rating of fgo,player_review
+would you tell a friend to try fgo,player_review
+is fgo overhyped or underrated,player_review
+do you think fgo deserves its reputation,player_review
+my honest opinion is fgo can be frustrating,player_review
+what is the meaning of life,fallback
+can you do my homework,fallback
+tell me a joke,fallback
+what's the weather today,fallback
+who won the election,fallback
+whats 2+2,fallback
+sing me a song,fallback
+can you write code,fallback
+what time is it,fallback
+where do you live,fallback
+do you have feelings,fallback
+whats your favorite color,fallback
+help me with math,fallback
+this makes no sense,fallback
+idk,fallback
+nvm,fallback
+never mind,fallback
+forget it,fallback
+what other games do you know,fallback
+what's a good game like this one,fallback
+have you played other gacha games,fallback
+what's your favorite anime,fallback
+can you recommend a different game,fallback
+are you a real person,fallback
+what other rpgs are good,fallback
+i'm bored what should i play instead,fallback
+do you know genshin impact,fallback
+what's the best mobile game overall,fallback
+can we talk about something else,fallback
+how do i cook pasta,fallback
+whats the capital of france,fallback
+can you help me with my essay,fallback
+whats a good movie to watch,fallback
+do you like music,fallback
+tell me about yourself,fallback
+whats the latest news,fallback
+how do i fix my wifi,fallback
+whats your name,fallback
+can you translate this for me,fallback
+whats 10 times 10,fallback
+recommend me a book,fallback
+how tall is mount everest,fallback
+whats a good workout routine,fallback
+can you help with my resume,fallback
+whats trending right now,fallback

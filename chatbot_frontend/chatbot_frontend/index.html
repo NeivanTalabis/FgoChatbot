@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FGO Chatbot</title>
+  <style>
+    html, body { height: 100%; margin: 0; font-family: system-ui, sans-serif; }
+    #app { display: flex; height: 100vh; }
+    #avatar-panel { position: relative; flex: 1 1 55%; min-width: 280px; background: linear-gradient(#dfe9f3, #ffffff); }
+    #avatar-container { position: absolute; inset: 0; }
+    #avatar-status { position: absolute; left: 12px; bottom: 12px; font-size: 13px; color: #555; }
+    #chat-panel { flex: 1 1 45%; max-width: 560px; display: flex; flex-direction: column; padding: 12px; box-sizing: border-box; }
+    #chat-window { flex: 1; overflow-y: auto; border: 1px solid #ccc; padding: 8px; margin-bottom: 8px; }
+    .msg { margin: 6px 0; white-space: pre-wrap; }
+    .msg.user { text-align: right; }
+    #input-row { display: flex; gap: 6px; }
+    #user-input { flex: 1; padding: 8px; }
+    #credit { margin-top: 8px; font-size: 11px; color: #777; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div id="avatar-panel">
+      <div id="avatar-container"></div>
+      <div id="avatar-status">Loading avatar...</div>
+    </div>
+    <div id="chat-panel">
+      <h2>FGO Chatbot</h2>
+      <div id="chat-window"></div>
+      <div id="input-row">
+        <input type="text" id="user-input" placeholder="Ask about FGO..." autocomplete="off" />
+        <button id="send-btn">Send</button>
+      </div>
+      <div id="credit">Avatar model: 猫又おかゆ (author: hololive), credited per the model's license.</div>
+    </div>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
