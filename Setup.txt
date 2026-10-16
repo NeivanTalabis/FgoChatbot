@@ -70,4 +70,3 @@ IF SOMETHING GOES WRONG
   The server fails on the first start with a network error
       It needs internet once to download the servant list. Connect and try again.
 
-More detail: see README.md
