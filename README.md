@@ -137,7 +137,7 @@ Known limitations
 Credits and notices
 
 - Servant data: Atlas Academy game-data API (https://api.atlasacademy.io).
-- 3D avatar model: 猫又おかゆ (author per the file's metadata: hololive), used under the model's
+- 3D avatar model: 猫又おかゆ (author per the file's metadata: hololive), used under the model's (p.s Couldn’t find Tamamo no mae model)
   own license, which requires credit.
 - *Fate/Grand Order* and its characters belong to their respective owners. This is an
   unofficial, non-commercial student project. The chatbot's playful voice is original wording
